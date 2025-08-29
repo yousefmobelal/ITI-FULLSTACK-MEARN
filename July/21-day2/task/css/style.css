@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: rgb(57, 91, 100);
+  color: white;
+  text-align: center;
+  align-content: center;
+  height: 100px;
+  margin: 0 0 5px 0;
+}
+
+thead > tr > th {
+  background-color: rgb(38, 102, 207);
+  height: 40px;
+  font-size: 20px;
+  color: white;
+}
+
+td {
+  padding-left: 10px;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: rgb(152, 183, 232);
+}
+tbody > tr:nth-child(even) {
+  background-color: rgb(242, 242, 242);
+}
+
+button {
+  background-color: rgb(38, 102, 207);
+  color: white;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+li {
+  background-color: rgb(57, 91, 100);
+  margin: 3px;
+  height: 30px;
+  width: 150px;
+  border-radius: 2px;
+  align-content: center;
+  text-align: center;
+  list-style-type: none;
+}
+
+li > a {
+  color: white;
+  text-decoration: none;
+}
+
+input {
+  height: 25px;
+  border-radius: 5px;
+  display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 95%;
+}
+
+#linksbar {
+  float: right;
+  border-left: 1px black solid;
+  padding-left: 10px;
+  width: 18%;
+}
+
+#content > h2 {
+  display: block;
+}
+
+#customers {
+  width: 80%;
+  height: 420px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  left: 140px;
+}
+
+#aboutus {
+  display: inline-block;
+  vertical-align: top;
+  width: 35%;
+  margin-right: 70px;
+}
+
+#titles {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#titles > p {
+  display: inline-block;
+  padding-right: 300px;
+}

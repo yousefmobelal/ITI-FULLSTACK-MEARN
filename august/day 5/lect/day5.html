@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <video
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+      controls
+      muted
+      autoplay
+      poster="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+      height="500px"
+      width="700px"
+    >
+      <source src="" />
+    </video>
+
+    <input type="button" value="play" id="btnPlay" />
+    <input type="button" value="stop" id="btnStop" />
+
+    <script>
+      var video = document.querySelector("video");
+      var btnPlay = document
+        .querySelector("#btnPlay")
+        .addEventListener("click", function () {
+          video.play();
+        });
+      var btnStop = document
+        .querySelector("#btnStop")
+        .addEventListener("click", function () {
+          video.pause();
+        });
+      navigator.geolocation.getCurrentPosition(function (p) {
+        var { latitude, longitude } = p.coords;
+        console.log(p.coords);
+        console.log(latitude, longitude);
+        // location.replace(
+        //   "https://www.google.com/maps/place/Ganzouri+Specialized+Hospital/@" +
+        //     latitude +
+        //     "," +
+        //     longitude
+        // );
+      });
+      console.log(video.duration);
+    </script>
+  </body>
+</html>

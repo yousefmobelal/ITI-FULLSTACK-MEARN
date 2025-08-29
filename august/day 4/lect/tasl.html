@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="task.css" />
+  </head>
+  <body>
+    <header>Header</header>
+    <nav>Menu Navigation</nav>
+    <section id="pageStructureSection">
+      <aside id="leftSide">Cunenutu</aside>
+      <section id="cunenutuMenu">Cunenutu Menu</section>
+      <aside id="rightSide">Cunenutu</aside>
+    </section>
+    <footer>Footer</footer>
+
+    <form action="" id="userDataForm">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        name=""
+        id="email"
+        placeholder="Enter your email address"
+      />
+      <label for="website">Website</label>
+      <input
+        type="text"
+        name=""
+        id="website"
+        placeholder="Enter your website"
+      />
+      <label for="phoneNumber">Phone Number:</label>
+      <input
+        type="number"
+        name=""
+        id="phoneNumber"
+        max="11"
+        placeholder="Enter your phone number"
+      />
+      <label for="favoriteColor">Favorite Color:</label>
+      <input type="color" name="" id="favoriteColor" />
+      <label for="dateOfBirth">Date of birth:</label>
+      <input type="datetime-local" name="" id="dateOfBirth" />
+      <label for="temperature">Temperature:</label>
+      <meter
+        id="temperature"
+        value="38"
+        optimum="37"
+        low="35"
+        high="40"
+        min="0"
+        max="50"
+      ></meter>
+      <label for="temperature">Progress:</label>
+      <progress id="progress" min="0" max="100" value="50"></progress>
+    </form>
+
+    <section id="changeColorSection">
+      <h2>Change 3 color range:</h2>
+      <form action="" id="colorsForm">
+        <label for="redRange">Red</label>
+        <input type="range" name="" id="redRange" min="0" max="255" />
+
+        <label for="greenRange">Green</label>
+        <input type="range" name="" id="greenRange" min="0" max="255" />
+
+        <label for="blueRange">Blue</label>
+        <input type="range" name="" id="blueRange" min="0" max="255" />
+      </form>
+      <h3 id="textToChangeColor">This some text</h3>
+    </section>
+    <script src="task.js"></script>
+  </body>
+</html>

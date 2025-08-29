@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+header {
+  background-color: blue;
+  height: 10vh;
+  margin-bottom: 0.3vh;
+}
+
+p {
+  color: white;
+  font-size: 1em;
+}
+
+footer {
+  background-color: blue;
+  height: 10vh;
+  margin-top: 0.3vh;
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+  height: 79.4vh;
+}
+
+#mainContent {
+  background-color: green;
+  flex: 2;
+  min-width: 18.75em;
+}
+
+aside {
+  background-color: red;
+  flex: 1;
+  min-width: 12.5em;
+}
+
+.centerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

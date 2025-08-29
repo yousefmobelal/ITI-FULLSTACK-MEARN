@@ -1,0 +1,49 @@
+p {
+  color: red;
+}
+
+#p2 {
+  background-color: blue;
+}
+
+.one {
+  color: rgb(255, 255, 255);
+  text-decoration: underline double red;
+  text-transform: capitalize;
+  letter-spacing: 5px;
+  word-spacing: 5px;
+  line-height: 30px;
+  background-color: black;
+  /* background-image: url(../images/image.png);
+  /* background-repeat: no-repeat; */
+  /* background-position: 10px 20px;
+  background-size: contain;
+  background-attachment: scroll;  */
+  overflow: auto;
+  padding: 10px 20px 10px 20px;
+  border: 5px red solid;
+  border-style: dotted;
+  border-color: green blue yellow red;
+  border-top: 2px gray dashed;
+  border-radius: 10px;
+}
+
+#circle {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+li {
+  display: inline-block;
+  background-color: cadetblue;
+  border: 1px red solid;
+  margin: 10px;
+  width: 200px;
+}
+
+h1 {
+  display: none;
+  /* visibility: hidden; */
+}

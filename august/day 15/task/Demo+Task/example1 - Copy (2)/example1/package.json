@@ -1,0 +1,14 @@
+{
+  "name": "example1",
+  "version": "1.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Ahmed",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jasmine": "^5.7.1"
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.css" />
+
+    <style>
+      #div1 {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-top: 9px solid transparent;
+        border-right: 9px solid red;
+        transform: rotate(10deg);
+      }
+
+      #div1:after {
+        content: "";
+        position: absolute;
+        border-top: 3px solid red;
+        border-radius: 20px 0 0 0;
+        /* top: -12px;
+        left: -9px; */
+        width: 12px;
+        height: 12px;
+        /* transform: rotate(45deg); */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1"></div>
+    <i class="fa-solid fa-house"></i>
+  </body>
+</html>

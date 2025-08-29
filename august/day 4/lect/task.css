@@ -1,0 +1,93 @@
+body {
+  margin: 0 0 100px 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+nav {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#rightSide {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  margin-left: 10px;
+  position: 0;
+}
+
+#leftSide {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  float: left;
+  height: 300px;
+  width: 400px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pageStructureSection {
+  display: flex;
+  margin-top: 10px;
+}
+
+#userDataForm {
+  margin: 40px auto;
+  width: max-content;
+}
+
+#cunenutuMenu {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 238, 238);
+}
+
+#userDataForm input,
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+#colorsForm input {
+  margin-bottom: 10px;
+}
+
+#changeColorSection {
+  margin: 0 auto;
+  width: max-content;
+}

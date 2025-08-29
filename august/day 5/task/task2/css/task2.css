@@ -1,0 +1,32 @@
+body {
+  margin: 0 20px;
+  padding: 0;
+}
+
+video {
+  margin: auto;
+  width: 100%;
+}
+
+#videoControle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin: 10px;
+}
+
+#playlistVideos {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  justify-content: center;
+}
+
+.playlistVideoPoster {
+  height: 200px;
+  width: 300px;
+  justify-content: stretch;
+}

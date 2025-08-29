@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/@fortawesome/fontawesome-free/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <script
+      src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">@ Your Company</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse show" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-lg-none">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Authors</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-none d-lg-flex">
+            <li class="nav-item">
+              <a class="nav-link border-end" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-end" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-end" href="#">Authors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-end" href="#">Shop</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+          <i class="bi bi-twitter me-5"></i>
+          <i class="bi bi-instagram me-5"></i>
+          <i class="bi bi-facebook me-5"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel Slider -->
+
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://images.unsplash.com/photo-1634896382669-a1489b7c5287?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="d-block w-100 object-fit-cover"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="images/2.jpg"
+            class="d-block w-100 object-fit-cover"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="images/3.jpg"
+            class="d-block w-100 object-fit-cover"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <div class="fs-5">Third slide label</div>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Cards Section -->
+    <div id="cardsSection" class="d-flex flex-wrap justify-content-evenly">
+      <div class="card mt-3 mx-2" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="https://plus.unsplash.com/premium_photo-1661351526055-d64813e60608?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <p class="card-text fw-bold text-center">
+            How to Overcome Creative Blocks & Find Inspiration
+          </p>
+          <p class="text-center fs-6">Person • Mar 15, 2022 • 10 reviews</p>
+          <p class="text-center fs-6 text-secondary">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+      <div class="card mt-3 mx-2" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="https://plus.unsplash.com/premium_photo-1661351526055-d64813e60608?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <p class="card-text fw-bold text-center">
+            Some quick example text to build on the card title.
+          </p>
+          <p class="text-center fs-6">Person • Mar 15, 2022 • 10 reviews</p>
+          <p class="text-center fs-6 text-secondary">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+      <div class="card mt-3 mx-2" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="https://plus.unsplash.com/premium_photo-1661351526055-d64813e60608?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <p class="card-text fw-bold text-center">
+            Reprehenderit iusto! Saepe odit ipsa reprehenderit! Odit nihil.
+          </p>
+          <p class="text-center fs-6">Person • Mar 15, 2022 • 10 reviews</p>
+          <p class="text-center fs-6 text-secondary">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest Posts -->
+    <div class="mt-3 py-3 px-4 bg-body-secondary">
+      <!-- Title and Subtitle section -->
+      <p class="fs-1 fw-bold text-center">Latest Posts</p>
+      <p class="fs-6 text-center text-secondary">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+
+      <!-- Posts And Trending Section -->
+      <div id="postsAndTrendingSeciont" class="row">
+        <!-- Image And Posts Section -->
+        <div id="postsAndImageSection" class="col-lg-8 col-md-12 mb-3">
+          <!-- Image Section -->
+          <div class="card text-bg-dark" style="max-width: 100vmin">
+            <img
+              src="https://ik.imagekit.io/panmac/tr:f-auto,w-740,pr-true//bcd02f72-b50c-0179-8b4b-5e44f5340bd4/19a3a9ad-52af-400a-b83d-39c0aef65076/Books-to-change-your-perspective-on-life.webp"
+              class="card-img opacity-50"
+              style="max-width: 100vmin"
+              alt="..."
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-center text-center"
+            >
+              <h5 class="card-title">Books</h5>
+              <p class="card-text">
+                10 Life-Changing Books Everyone Should Read
+              </p>
+              <p class="card-text">
+                <small>Anna Maria Lopez • Mar 15, 2022 • 10 min read</small>
+              </p>
+            </div>
+          </div>
+          <!-- Posts Section -->
+          <div id="postsSection" class="mt-3">
+            <div class="row g-3">
+              <div class="col-12 d-flex">
+                <img
+                  src="https://static.wikia.nocookie.net/freestylerp/images/5/5f/Placeholder.jpg/revision/latest/thumbnail/width/360/height/450?cb=20240111110709"
+                  style="width: 120px; height: auto"
+                  class="rounded me-2 object-fit-contain"
+                  alt=""
+                />
+                <div>
+                  <p>Title • 12 min read</p>
+                  <p class="fs-5" style="max-width: w-auto">
+                    Movie Night In: How to Create Home Theater Magic
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <p>Person Name • Jun 11, 2022</p>
+                </div>
+              </div>
+
+              <div class="col-12 d-flex">
+                <img
+                  src="https://static.wikia.nocookie.net/freestylerp/images/5/5f/Placeholder.jpg/revision/latest/thumbnail/width/360/height/450?cb=20240111110709"
+                  style="width: 120px; height: auto"
+                  class="rounded me-2 object-fit-contain"
+                  alt=""
+                />
+                <div>
+                  <p>Title • 12 min read</p>
+                  <p class="fs-5" style="max-width: w-auto">
+                    Movie Night In: How to Create Home Theater Magic
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <p>Person Name • Jun 11, 2022</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center my-4">
+              <button
+                type="button"
+                class="btn btn-light text-uppercase fs-6 fw-medium rounded-5"
+              >
+                load more posts
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trending And Advertisement Section -->
+        <div class="col-lg-4 col-md-12">
+          <!-- Trending Section -->
+          <div class="bg-white p-3 rounded">
+            <p class="fs-4 fw-bold">Trending Posts</p>
+            <!-- 1 -->
+            <div class="d-flex mb-2">
+              <img
+                src="https://static.wikia.nocookie.net/freestylerp/images/5/5f/Placeholder.jpg/revision/latest/thumbnail/width/360/height/450?cb=20240111110709"
+                class="rounded me-2"
+                style="max-width: 150px"
+                alt=""
+              />
+              <div>
+                <p
+                  class="fs-6 lh-sm fw-medium text-truncate"
+                  style="max-width: 250px"
+                >
+                  How to Enjoy the journey and Reach Your Goals
+                </p>
+                <p>Jul 11, 2022</p>
+              </div>
+            </div>
+            <!-- 2 -->
+            <div class="d-flex mb-2">
+              <img
+                src="https://static.wikia.nocookie.net/freestylerp/images/5/5f/Placeholder.jpg/revision/latest/thumbnail/width/360/height/450?cb=20240111110709"
+                class="rounded me-2"
+                style="max-width: 150px"
+                alt=""
+              />
+              <div>
+                <p
+                  class="fs-6 lh-sm fw-medium text-truncate"
+                  style="max-width: 250px"
+                >
+                  How to Grow Your Own Potatoes at Home
+                </p>
+                <p>Dec 3, 2022</p>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div class="d-flex mb-2">
+              <img
+                src="https://static.wikia.nocookie.net/freestylerp/images/5/5f/Placeholder.jpg/revision/latest/thumbnail/width/360/height/450?cb=20240111110709"
+                class="rounded me-2"
+                style="max-width: 150px"
+                alt=""
+              />
+              <div>
+                <p
+                  class="fs-6 lh-sm fw-medium text-truncate"
+                  style="max-width: 250px"
+                >
+                  How to Enjoy the journey and Reach Your Goals
+                </p>
+                <p>Apr 6, 2022</p>
+              </div>
+            </div>
+            <!-- 4 -->
+            <div class="d-flex mb-2">
+              <img
+                src="https://static.wikia.nocookie.net/freestylerp/images/5/5f/Placeholder.jpg/revision/latest/thumbnail/width/360/height/450?cb=20240111110709"
+                class="rounded me-2"
+                style="max-width: 150px"
+                alt=""
+              />
+              <div>
+                <p
+                  class="fs-6 lh-sm fw-medium text-truncate"
+                  style="max-width: 250px"
+                >
+                  How to Enjoy the journey and Reach Your Goals
+                </p>
+                <p>Mar 20, 2022</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advertisement Section -->
+          <div
+            class="p-3 mt-3 rounded bg-white d-flex flex-column justify-content-center"
+            style="max-height: 300px"
+          >
+            <img
+              src="https://img.freepik.com/free-photo/digital-marketing-with-icons-business-people_53876-94833.jpg?semt=ais_hybrid&w=740&q=80"
+              class="rounded object-fit-cover mx-auto"
+              style="max-height: 200px"
+              alt=""
+            />
+            <p class="text-center fs-6 fw-normal">Advertisement</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newest from health & lifestyle -->
+    <div class="mx-5 my-4">
+      <p class="fw-bold">
+        <a
+          class="text-dark text-decoration-none"
+          data-bs-toggle="collapse"
+          href="#healthCollapse"
+          role="button"
+          aria-expanded="false"
+          aria-controls="healthCollapse"
+        >
+          Newest from <span class="fw-bold">Health & Lifestyle</span>
+          <span class="ms-1">&#9662;</span>
+        </a>
+      </p>
+
+      <div class="collapse" id="healthCollapse">
+        <div class="">
+          <div class="row">
+            <div
+              id="cardsSection"
+              class="d-flex flex-wrap justify-content-evenly"
+            >
+              <!-- 1 -->
+              <div class="mt-3 healthAndLifStyleCard">
+                <img
+                  class="rounded card-img-top"
+                  src="https://cdn.prod.website-files.com/650c1bee516c4e723b11b29a/65206264927e177f8bd65950_651f6a5b0bcc2eb5956182ea_Top%252050%2520Healthcare%2520Companies%2520and%2520Their%2520Impact%2520on%2520the%2520Industry.webp"
+                  alt="Card image cap"
+                />
+                <div class="px-1">
+                  <p class="fs-6 text-secondary mt-2">
+                    Health Care • 11 min read
+                  </p>
+                  <p class="card-text fw-bold">
+                    Proven Health & Lifestyle Hacks That Will Boost Your Energy
+                    at Home and Work
+                  </p>
+                  <p
+                    class="fs-6 text-secondary text-truncate row-3 d-inline-block"
+                    style="max-width: 17rem"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                  <p class="fs-6 text-secondary">Person • Mar 15, 2022</p>
+                </div>
+              </div>
+
+              <!-- 2 -->
+              <div class="mt-3 healthAndLifStyleCard">
+                <img
+                  class="rounded card-img-top"
+                  src="https://www.presentmomentsrecovery.com/wp-content/uploads/2020/02/sky-2667455_1280.jpg"
+                  alt="Card image cap"
+                />
+                <div class="px-1">
+                  <p class="fs-6 text-secondary mt-2">
+                    willingness • 11 min read
+                  </p>
+                  <p class="card-text fw-bold">
+                    The Role of Positive Thinking in Maintaining Good Health
+                  </p>
+                  <p
+                    class="fs-6 text-secondary text-truncate row-3 d-inline-block"
+                    style="max-width: 17rem"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                  <p class="fs-6 text-secondary">Person • Jun 11, 2022</p>
+                </div>
+              </div>
+
+              <!-- 3 -->
+              <div class="mt-3 healthAndLifStyleCard">
+                <img
+                  class="rounded card-img-top"
+                  src="https://img.freepik.com/free-photo/top-view-fast-food-mix-mozzarella-sticks-club-sandwich-hamburger-mushroom-pizza-caesar-shrimp-salad-french-fries-ketchup-mayo-cheese-sauces-table_141793-3998.jpg?semt=ais_hybrid&w=740&q=80"
+                  alt="Card image cap"
+                />
+                <div class="px-1">
+                  <p class="fs-6 text-secondary mt-2">Food • 2 min read</p>
+                  <p class="card-text fw-bold">
+                    7 Foods That Fight Inflammation and Enhance Overall Health
+                  </p>
+                  <p
+                    class="fs-6 text-secondary text-truncate row-3 d-inline-block"
+                    style="max-width: 17rem"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                  <p class="fs-6 text-secondary">Person • Mar 9, 2022</p>
+                </div>
+              </div>
+
+              <!-- 4 -->
+              <div class="mt-3 healthAndLifStyleCard">
+                <img
+                  class="rounded card-img-top"
+                  src="https://img.freepik.com/free-vector/illustration-passion_53876-17884.jpg?size=626&ext=jpg"
+                  alt="Card image cap"
+                />
+                <div class="px-1">
+                  <p class="fs-6 text-secondary mt-2">
+                    Lifestyle • 15 min read
+                  </p>
+                  <p class="card-text fw-bold">
+                    How to Find Fulfillment and Happiness Throuhg a Minimalist
+                    Lifestyle
+                  </p>
+                  <p
+                    class="fs-6 text-secondary text-truncate row-3 d-inline-block"
+                    style="max-width: 17rem"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                  <p class="fs-6 text-secondary">Person • Mar 15, 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subscribe -->
+    <div
+      class="bg-body-secondary mx-5 d-flex flex-column align-items-center rounded py-5"
+    >
+      <p class="fs-2 fw-bold">Subscribe to our Newsletter</p>
+      <p class="fs-6 fw-medium text-secondary w-50 text-center">
+        Get the latest product updates, company news, and spcidal offers
+        delivered right to your inbox.
+      </p>
+
+      <form
+        class="w-50 d-flex flex-wrap justify-content-center align-items-center align-content-center"
+      >
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="First Name"
+          />
+        </div>
+        <div class="form-group m-2">
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput2"
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="form-group m-2">
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter your email"
+          />
+        </div>
+      </form>
+      <button
+        type="button"
+        class="btn btn-dark btn-lg mt-2 text-uppercase rounded-1 px-5"
+      >
+        Subscribe
+      </button>
+    </div>
+
+    <!-- footer -->
+    <footer
+      class="bg-body-secondary mt-5 p-5 d-flex justify-content-between flex-wrap"
+    >
+      <!-- Info about company -->
+      <div class="w-25 me-5">
+        <p class="fw-medium fs-6 mb-3">@ Your Company</p>
+        <p class="text-secondary mt-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          deserunt ab recusandae
+        </p>
+
+        <p class="text-secondary mt-2">
+          ©​​ 2022 Your Company All rights reserved Terms of Service • Privacy
+          Policy
+        </p>
+      </div>
+
+      <!-- Tags -->
+      <div class="flex-fill w-25">
+        <p class="fw-medium fs-6 mb-3">Tags</p>
+
+        <div class="d-flex flex-wrap gap-2 w-75">
+          <span class="badge text-bg-light p-2">Health</span>
+          <span class="badge text-bg-light p-2">lifestyle</span>
+          <span class="badge text-bg-light p-2">News</span>
+          <span class="badge text-bg-light p-2">Books</span>
+          <span class="badge text-bg-light p-2">Design</span>
+          <span class="badge text-bg-light p-2">Games</span>
+          <span class="badge text-bg-light p-2">Food</span>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="flex-fill">
+        <p class="fw-medium fs-6 mb-3">Social</p>
+
+        <div class="d-flex flex-column gap-3">
+          <i class="bi bi-twitter me-5">
+            <p class="fs-6 fw-medium ms-1 d-inline text-secondary">Twitter</p>
+          </i>
+          <i class="bi bi-facebook me-5">
+            <p class="fs-6 fw-medium ms-1 d-inline text-secondary">Facebook</p>
+          </i>
+          <i class="bi bi-instagram me-5">
+            <p class="fs-6 fw-medium ms-1 d-inline text-secondary">Instagram</p>
+          </i>
+          <i class="bi bi-youtube me-5">
+            <p class="fs-6 fw-medium ms-1 d-inline text-secondary">Youtube</p>
+          </i>
+        </div>
+      </div>
+      <!-- About -->
+      <div class="flex-fill">
+        <p class="fw-medium fs-6 mb-3">About</p>
+        <a class="nav-link text-secondary fw-medium mb-3" href="#">Shop</a>
+        <a class="nav-link text-secondary fw-medium mb-3" href="#">Authors</a>
+        <a class="nav-link text-secondary fw-medium mb-3" href="#">Sitemap</a>
+        <a class="nav-link text-secondary fw-medium mb-3" href="#">About us</a>
+        <a class="nav-link text-secondary fw-medium mb-3" href="#">Contact</a>
+      </div>
+    </footer>
+  </body>
+</html>

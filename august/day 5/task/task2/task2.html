@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/task2.css" />
+  </head>
+  <body>
+    <video
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+      poster="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+      height="600px"
+      width="600px"
+    ></video>
+
+    <section id="videoControle">
+      <input type="button" value="▶" id="playBtn" />
+      <progress id="videoProgress"></progress>
+      <input type="button" value="⏸" id="stopBtn" />
+      <input type="button" value="🔇" id="mute" />
+      <input type="button" value="🔊" id="unmute" />
+      <label for="soundVolume">Change Volume:</label>
+      <input
+        type="range"
+        name="range"
+        value="100"
+        id="soundVolume"
+        min="0"
+        max="100"
+      />
+    </section>
+    <h2>Playlist:</h2>
+    <section id="playlistVideos"></section>
+    <script src="js/task2.js"></script>
+  </body>
+</html>
