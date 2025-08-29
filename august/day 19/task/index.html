@@ -4,29 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+      crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="node_modules/@fortawesome/fontawesome-free/css/all.css"
-    />
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="css/style.css" />
+
     <script
-      src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
       defer
     ></script>
-    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">@ Your Company</a>
+        <a class="navbar-brand" href="#">@ Yousef Mohamed</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -224,7 +229,7 @@
       <!-- Posts And Trending Section -->
       <div id="postsAndTrendingSeciont" class="row">
         <!-- Image And Posts Section -->
-        <div id="postsAndImageSection" class="col-lg-8 col-md-12 mb-3">
+        <div id="postsAndImageSection" class="col-12 col-md-6 mb-4">
           <!-- Image Section -->
           <div class="card text-bg-dark" style="max-width: 100vmin">
             <img
@@ -299,7 +304,7 @@
         </div>
 
         <!-- Trending And Advertisement Section -->
-        <div class="col-lg-4 col-md-12">
+        <div class="col-12 col-md-6">
           <!-- Trending Section -->
           <div class="bg-white p-3 rounded">
             <p class="fs-4 fw-bold">Trending Posts</p>
@@ -314,7 +319,7 @@
               <div>
                 <p
                   class="fs-6 lh-sm fw-medium text-truncate"
-                  style="max-width: 250px"
+                  style="max-width: 50vw"
                 >
                   How to Enjoy the journey and Reach Your Goals
                 </p>
@@ -332,7 +337,7 @@
               <div>
                 <p
                   class="fs-6 lh-sm fw-medium text-truncate"
-                  style="max-width: 250px"
+                  style="max-width: 50vw"
                 >
                   How to Grow Your Own Potatoes at Home
                 </p>
@@ -350,7 +355,7 @@
               <div>
                 <p
                   class="fs-6 lh-sm fw-medium text-truncate"
-                  style="max-width: 250px"
+                  style="max-width: 50vw"
                 >
                   How to Enjoy the journey and Reach Your Goals
                 </p>
@@ -368,7 +373,7 @@
               <div>
                 <p
                   class="fs-6 lh-sm fw-medium text-truncate"
-                  style="max-width: 250px"
+                  style="max-width: 50vw"
                 >
                   How to Enjoy the journey and Reach Your Goals
                 </p>
@@ -571,14 +576,14 @@
     >
       <!-- Info about company -->
       <div class="w-25 me-5">
-        <p class="fw-medium fs-6 mb-3">@ Your Company</p>
+        <p class="fw-medium fs-6 mb-3">@ Yousef Mohamed</p>
         <p class="text-secondary mt-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
           deserunt ab recusandae
         </p>
 
         <p class="text-secondary mt-2">
-          ©​​ 2022 Your Company All rights reserved Terms of Service • Privacy
+          ©​​ 2022 Yousef Mohamed All rights reserved Terms of Service • Privacy
           Policy
         </p>
       </div>
@@ -639,5 +644,15 @@
         <a class="nav-link text-secondary fw-medium mb-3" href="#">Contact</a>
       </div>
     </footer>
+
+    <!-- The Floating Navigator Button -->
+    <a href="#" class="text-white">
+      <div
+        class="bg-dark d-flex justify-content-center align-items-center position-fixed rounded-circle"
+        style="width: 28px; height: 28px; bottom: 10%; right: 4%"
+      >
+        <i class="bi bi-arrow-up"></i>
+      </div>
+    </a>
   </body>
 </html>
