@@ -1,0 +1,11 @@
+$primary: red;
+$secondary: blue;
+$tablet-min: 768px;
+$tablet-max: 1024px;
+$grid-columns: 12;
+$breakpoints: (
+  sm: 200px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

@@ -1,0 +1,41 @@
+@import 'variables';
+
+@mixin mQ($minWidth: null, $maxWidth: null) {
+  @if $minWidth != null and $maxWidth != null {
+    @media (min-width: #{$minWidth}) and (max-width: #{$maxWidth}) {
+      @content;
+    }
+  } @else if $minWidth != null {
+    @media (min-width: #{$minWidth}) {
+      @content;
+    }
+  } @else if $maxWidth != null {
+    @media (max-width: #{$maxWidth}) {
+      @content;
+    }
+  }
+}
+
+
+@mixin generateBreakPoints() {
+          @for $i from 1 through $grid-columns {
+        .col-#{$i} {
+          width: percentage($i / $grid-columns);
+          padding: 10px;
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+  @each $name, $size in $breakpoints {
+    @media (min-width: $size) {
+      @for $i from 1 through $grid-columns {
+        .col-#{$name}-#{$i} {
+          width: percentage($i / $grid-columns);
+          padding: 10px;
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}

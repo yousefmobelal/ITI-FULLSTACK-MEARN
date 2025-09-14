@@ -1,0 +1,63 @@
+@import 'variables';
+@import 'mixins';
+
+.main{
+    &-title{
+        color: $primary;
+    }
+
+    &-subtitle{
+        color: $secondary;
+    }
+
+    &-btn{
+        background-color: $primary;
+
+        &:hover{
+            background-color: $secondary;
+        }
+    }
+}
+
+
+$font-sizes: 14px, 16px, 18px;
+.content{
+    @each $fontSize in $font-sizes{
+        .font-#{$fontSize}{
+            font-size: $fontSize;
+        }
+    }
+}
+
+
+
+
+.finish-btn {
+  width: percentage(1); 
+    margin-bottom: 10px;
+  @include mQ($tablet-min, $tablet-max) {
+    width: percentage(1/2);
+  }
+  @include mQ($tablet-max +1) {
+    width: percentage(1/4);
+  }
+}
+
+// @content : allows us to pass a block of styles to the mixin
+// percetnage() : converts a number to a percentage
+
+
+//grid system
+.container {
+  margin-bottom: 10px;
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+@include generateBreakPoints();

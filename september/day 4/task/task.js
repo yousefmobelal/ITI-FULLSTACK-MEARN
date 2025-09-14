@@ -58,6 +58,7 @@ async function getPosts(userId) {
 async function displayData() {
   try {
     const userPosts = {};
+
     const users = await getUsers();
     for (const user of users) {
       userPosts[user.username] = await getPosts(user.id);
