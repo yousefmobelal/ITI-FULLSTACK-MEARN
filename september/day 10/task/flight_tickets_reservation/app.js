@@ -10,7 +10,13 @@ function createTicket(ticket) {
         tickets = JSON.parse(data);
       }
 
-      tickets.push(ticket.toObject());
+      tickets.push({
+        seatNum: ticket.seatNum,
+        flightNum: ticket.flightNum,
+        departureAirport: ticket.departureAirport,
+        arrivalAirport: ticket.arrivalAirport,
+        travellingDate: ticket.travellingDate,
+      });
       const ticketsStr = JSON.stringify(tickets);
       fs.writeFile("tickets.json", ticketsStr, (err) => {
         if (!err) {
@@ -81,7 +87,7 @@ function updateTicket(id, ticket) {
 }
 
 // const ticket = new FlightTicket(2, 44, "Cairo", "Rome", "20-9-2025");
-// createTicket(2, ticket);
+// createTicket(ticket);
 
 // const updatedTicket = new FlightTicket(2, 44, "Cairo", "Madrid", "20-9-2025");
 // updateTicket(2, updatedTicket);

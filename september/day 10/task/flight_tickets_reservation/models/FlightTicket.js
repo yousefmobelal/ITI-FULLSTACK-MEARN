@@ -13,16 +13,6 @@ export default class FlightTicket {
     this.travellingDate = travellingDate;
   }
 
-  toObject() {
-    return {
-      seatNum: this.seatNum,
-      flightNum: this.flightNum,
-      departureAirport: this.departureAirport,
-      arrivalAirport: this.arrivalAirport,
-      travellingDate: this.travellingDate,
-    };
-  }
-
   toString() {
     return `Flight Ticket Details:
     Seat Number: ${this.seatNum}

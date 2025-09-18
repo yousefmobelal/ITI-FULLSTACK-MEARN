@@ -3,16 +3,24 @@ async function showAllClients() {
   try {
     const res = await fetch("http://localhost:7000/clients");
     if (!res.ok) throw new Error("Failed to load clients");
-    console.log(`this is the res: ${res}`);
     const clients = await res.json();
+
     const allClientsList = document.querySelector("#allClientsList");
     allClientsList.innerHTML = "";
+
     console.log("Parsed clients:", clients, typeof clients);
 
     for (let client of clients) {
-      const li = document.createElement("li");
-      li.textContent = client.name;
-      allClientsList.appendChild(li);
+      const ul = document.createElement("ul");
+      ul.innerHTML = `
+        <li><strong>Name:</strong> ${client.name}</li>
+        <li><strong>Phone Number:</strong> ${client.phoneNumber}</li>
+        <li><strong>Email:</strong> ${client.email}</li>
+        <li><strong>Address:</strong> ${client.address}</li>
+      `;
+      ul.style.marginBottom = "20px";
+
+      allClientsList.appendChild(ul);
     }
   } catch (err) {
     alert("Something went wrong showing all clients.");

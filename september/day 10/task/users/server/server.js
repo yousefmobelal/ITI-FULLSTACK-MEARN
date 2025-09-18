@@ -14,6 +14,10 @@ let welcomeJs = "";
 fs.readFile("../client/scripts/welcome.js", (err, data) => {
   err ? console.log(err) : (welcomeJs = data.toString());
 });
+let mainJs = "";
+fs.readFile("../client/scripts/main.js", (err, data) => {
+  err ? console.log(err) : (mainJs = data.toString());
+});
 let mainCSS = "";
 fs.readFile("../client/styles/main.css", (err, data) => {
   err ? console.log(err) : (mainCSS = data.toString());
@@ -48,6 +52,9 @@ http
         } else if (url === "/scripts/welcome.js") {
           res.setHeader("content-type", "text/javascript");
           res.write(welcomeJs);
+        } else if (url === "/scripts/main.js") {
+          res.setHeader("content-type", "text/javascript");
+          res.write(mainJs);
         } else if (url === "/clients") {
           fs.readFile("clients.json", (err, data) => {
             if (err) {
@@ -86,14 +93,21 @@ function showWelcomePage(req, res) {
       email,
       address,
     };
-    const userDataStr = JSON.stringify([userData]);
-    fs.writeFile("clients.json", userDataStr, (err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(`Client ${name} added successfully`);
+    const users = fs.readFileSync("clients.json");
+    const parsedUsers = JSON.parse(users.toString());
+
+    fs.writeFile(
+      "clients.json",
+      JSON.stringify([...parsedUsers, userData]),
+      (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(`Client ${name} added successfully`);
+        }
       }
-    });
+    );
+
     welcomeHtml = welcomeHtml
       .replace("{name}", params.get("name"))
       .replace("{mobileNumber}", params.get("phoneNumber"))
