@@ -1,4 +1,4 @@
-export default class FlightTicket {
+class FlightTicket {
   constructor(
     seatNum,
     flightNum,
@@ -13,6 +13,26 @@ export default class FlightTicket {
     this.travellingDate = travellingDate;
   }
 
+  toObject() {
+    return {
+      seatNum: this.seatNum,
+      flightNum: this.flightNum,
+      departureAirport: this.departureAirport,
+      arrivalAirport: this.arrivalAirport,
+      travellingDate: this.travellingDate,
+    };
+  }
+
+  static fromObject(object) {
+    return new FlightTicket(
+      object.seatNum,
+      object.flightNum,
+      object.departureAirport,
+      object.arrivalAirport,
+      object.travellingDate
+    );
+  }
+
   toString() {
     return `Flight Ticket Details:
     Seat Number: ${this.seatNum}
@@ -22,3 +42,5 @@ export default class FlightTicket {
     Travelling Date: ${this.travellingDate}`;
   }
 }
+
+module.exports = FlightTicket;

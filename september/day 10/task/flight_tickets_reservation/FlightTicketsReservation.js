@@ -1,91 +1,46 @@
-import FlightTicket from "./models/flightTicket.js";
-import fs from "fs";
+const FlightTicket = require("./models/flightTicket.js");
 
-export default class FlightTicketsReservation {
-  constructor() {}
+class FlightTicketsReservation {
+  constructor() {
+    this.tickets = [];
+  }
 
   createTicket(ticket) {
-    fs.readFile("tickets.json", (err, data) => {
-      if (!err) {
-        console.log("File has been read successfully");
-        let tickets = [];
-        if (data.length !== 0) {
-          tickets = JSON.parse(data);
-        }
-
-        tickets.push({
-          seatNum: ticket.seatNum,
-          flightNum: ticket.flightNum,
-          departureAirport: ticket.departureAirport,
-          arrivalAirport: ticket.arrivalAirport,
-          travellingDate: ticket.travellingDate,
-        });
-        const ticketsStr = JSON.stringify(tickets);
-        fs.writeFile("tickets.json", ticketsStr, (err) => {
-          if (!err) {
-            console.log("Ticket has been added successfully");
-          } else {
-            console.log(err);
-          }
-        });
-      } else {
-        console.log(err);
-      }
-    });
+    this.tickets.push(ticket.toObject());
+    console.log("Ticket Created Successfully");
   }
 
   displayTicket(seatNum) {
-    let res;
-
-    try {
-      const data = fs.readFileSync("tickets.json");
-      if (data.length === 0) return res;
-
-      const tickets = JSON.parse(data);
-      res =
-        tickets.find((ele) => ele.seatNum === seatNum) || "No Ticket Available";
-
-      const ticket = new FlightTicket(
-        res.seatNum,
-        res.flightNum,
-        res.departureAirport,
-        res.arrivalAirport,
-        res.travellingDate
-      );
-
-      res = ticket.toString();
-    } catch (err) {
-      res = err;
+    let res = this.tickets.find((ele) => ele.seatNum === seatNum);
+    if (!res) {
+      console.log("No Ticket founded");
+      return;
     }
 
-    return res;
+    const ticket = FlightTicket.fromObject(res);
+    console.log(ticket.toString());
   }
 
   updateTicket(id, ticket) {
-    fs.readFile("tickets.json", (err, data) => {
-      if (!err) {
-        let tickets = [];
-        if (data.length !== 0) {
-          tickets = JSON.parse(data);
-        }
+    const foundedTicket = this.tickets.find((ele) => ele.seatNum === id);
+    if (!foundedTicket) {
+      console.log("No Ticket founded");
+      return;
+    }
 
-        const foundedTicket = tickets.find((ele) => ele.seatNum === id);
-        if (!foundedTicket) {
-          console.log("No Ticket founded");
-        }
+    const newTicket = new FlightTicket(
+      ticket.seatNum,
+      ticket.flightNum ?? foundedTicket.flightNum,
+      ticket.departureAirport ?? foundedTicket.departureAirport,
+      ticket.arrivalAirport ?? foundedTicket.arrivalAirport,
+      ticket.travellingDate ?? foundedTicket.travellingDate
+    );
 
-        tickets = tickets.map((ele) => (ele.seatNum === id ? ticket : ele));
-        const ticketsStr = JSON.stringify(tickets);
-        fs.writeFile("tickets.json", ticketsStr, (err) => {
-          if (!err) {
-            console.log("Ticket has been updated successfully");
-          } else {
-            console.log(err);
-          }
-        });
-      } else {
-        console.log(err);
-      }
-    });
+    this.tickets = this.tickets.map((ele) =>
+      ele.seatNum === id ? newTicket : ele
+    );
+    console.log("Ticket Updated Successfully");
   }
 }
+
+module.exports = FlightTicketsReservation;
