@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="../styles/welcome.css" />
+    <link rel="icon" href="../icons/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Welcome, <span id="userName">{name}</span> 🎉</h1>
+        <strong>You Entered Data:</strong>
+      </header>
+
+      <section class="user-data">
+        <ul>
+          <li><strong>Mobile Number:</strong> {mobileNumber}</li>
+          <li><strong>Email:</strong> {email}</li>
+          <li><strong>Address:</strong> {address}</li>
+        </ul>
+      </section>
+
+      <section class="all-clients">
+        <button id="showAllClientsBtn" class="btn-primary">
+          Show All Clients
+        </button>
+        <ul id="allClientsList" class="clients-list"></ul>
+      </section>
+    </div>
+
+    <script src="../scripts/welcome.js"></script>
+  </body>
+</html>
