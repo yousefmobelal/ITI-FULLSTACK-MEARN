@@ -48,7 +48,7 @@ self.addEventListener("fetch", (event) => {
           }
           const responseClone = networkResponse.clone();
           console.log(`Cloning new data to cache`);
-          caches.open("dynamic-cache").then((cache) => {
+          caches.open(staticDB).then((cache) => {
             console.log(`Adding new data to cache`);
             cache.put(event.request, responseClone);
           });

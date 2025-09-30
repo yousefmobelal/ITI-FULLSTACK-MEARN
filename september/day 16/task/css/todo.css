@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Alan Sans", sans-serif;
+  background: linear-gradient(100deg, #66e4cc, #4a7fe5);
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Alan Sans", sans-serif;
+  font-size: 50px;
+}
+
+#todosContainer {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#addTodoButton {
+  border-radius: 2px;
+  background-color: #4a7fe5;
+  border: none;
+  font-size: 20px;
+  margin-top: 20px;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+input,
+select {
+  margin-bottom: 10px;
+  border: none;
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 0 10px;
+}
+
+#dateSelectors {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#columnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
