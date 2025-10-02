@@ -1,0 +1,53 @@
+<div class="usersTable">
+  <div class="addUserRow">
+    <div class="addUserContainer">
+      <p class="title">Welcome!</p>
+      <p class="subtitle">Add New User</p>
+      <p>Each user requires name and email</p>
+
+      <form class="formFields" ngNativeValidate>
+        <label for="username">User name</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your user name"
+          name="userName"
+          [(ngModel)]="userName"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your Email"
+          name="email"
+          [(ngModel)]="email"
+          required
+        />
+
+        <button type="submit" id="addUserBtn">Add User</button>
+      </form>
+    </div>
+
+    <img id="addUserImage" src="conversation.png" alt="" />
+  </div>
+
+  <div class="tableContainer">
+    <p class="title">All Users</p>
+
+    <table>
+      <tr>
+        <th>User name</th>
+        <th>Email</th>
+      </tr>
+      @for (user of users; track $index) {
+      <tr>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+      }
+      <tr></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.slideContainer {
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins;
+}
+
+.slideContainer > img {
+  width: 800px;
+  height: 500px;
+}
+
+.buttons {
+  display: flex;
+  width: 800px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  background-color: #fafbff;
+  border: none;
+  border-right: 1px solid grey;
+  flex: 1;
+  height: 30px;
+  font-size: 12px;
+  transition: background-color 0.15s ease-in-out, color 0.15s linear;
+}
+
+button:hover {
+  background-color: #006a67;
+  color: white;
+}
+
+button:last-child {
+  border-right: none;
+  border-radius: 0 0 5px 0;
+}
+button:first-child {
+  border-radius: 0 0 0 5px;
+}
