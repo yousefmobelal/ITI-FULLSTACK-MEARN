@@ -1,9 +1,9 @@
 <div class="productDashboard">
   <h1>Product Dashboard</h1>
 
-  <h2>Add Product</h2>
   <div class="addProductContainer">
     <div class="addProductForm">
+      <h2>Add Product</h2>
       <label for="productName">Name:</label>
       <input type="text" name="productName" id="productName" [(ngModel)]="productName" required />
       <label for="productPrice">Price:</label>
@@ -61,5 +61,22 @@
       </div>
       }
     </div>
+  </div>
+
+  <h2>Favorite Products</h2>
+  <div class="favoriteProducts">
+    @if (favoriteProducts.length === 0) {
+    <p class="noFavoriteProducts">No favorite products available.</p>
+    } @else { @for (product of favoriteProducts; track $index) {
+
+    <div class="productItem favoriteProductItem">
+      <div>
+        <h3>{{ product.name }}</h3>
+        <p>Price: {{ product.price }}$</p>
+        <p>Category: {{ product.category }}</p>
+      </div>
+      <h1 class="favoriteIcon">❤</h1>
+    </div>
+    } }
   </div>
 </div>

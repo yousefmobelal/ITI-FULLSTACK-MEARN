@@ -13,8 +13,12 @@ export class ProductDashboard {
   productCategory: string = '';
 
   products: Product[] = [];
-  favoriteProducts: string[] = [];
+  favoriteProductsIds: string[] = [];
   editingProductId: string | null = null;
+
+  get favoriteProducts(): Product[] {
+    return this.products.filter((p) => this.favoriteProductsIds.includes(p.id));
+  }
 
   get isUpdating(): boolean {
     return this.editingProductId !== null;
@@ -25,6 +29,11 @@ export class ProductDashboard {
   }
 
   chooseProductTobeUpdated(product: Product) {
+    if (this.editingProductId == product.id) {
+      this.editingProductId = null;
+      this.resetInputs();
+      return;
+    }
     this.editingProductId = product.id;
     this.productName = product.name;
     this.productPrice = product.price;
@@ -32,21 +41,26 @@ export class ProductDashboard {
   }
 
   isFavorite(productId: string): boolean {
-    return this.favoriteProducts.includes(productId);
+    return this.favoriteProductsIds.includes(productId);
   }
 
   toggleFavorite(productId: string) {
-    const index = this.favoriteProducts.indexOf(productId);
+    const index = this.favoriteProductsIds.indexOf(productId);
     if (index > -1) {
-      this.favoriteProducts.splice(index, 1);
+      this.favoriteProductsIds.splice(index, 1);
     } else {
-      this.favoriteProducts.push(productId);
+      this.favoriteProductsIds.push(productId);
     }
   }
 
   deleteProduct(productId: string) {
     if (confirm('Are you sure you want to delete this product?')) {
+      if (this.editingProductId === productId) {
+        this.editingProductId = null;
+        this.resetInputs();
+      }
       this.products = this.products.filter((p) => p.id !== productId);
+      this.favoriteProductsIds = this.favoriteProductsIds.filter((id) => id !== productId);
     }
   }
 

@@ -17,6 +17,9 @@
 }
 .productsList {
   flex: 1;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
 }
 
 input {
@@ -40,12 +43,13 @@ input {
 }
 
 .productItem {
-  width: 50%;
+  width: 40%;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
   padding: 10px;
   min-width: 150px;
   margin-bottom: 10px;
+  height: max-content;
 }
 
 .productItem.p {
@@ -71,4 +75,28 @@ input {
 .update {
   background-color: #59b457 !important;
   color: white;
+}
+
+.favoriteProductItem {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.favoriteIcon {
+  color: red;
+  margin-right: 30px;
+  font-size: 40px;
+}
+
+.favoriteProducts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.noFavoriteProducts {
+  margin-inline: auto;
+  font-size: 20px;
+  font-weight: bold;
 }
