@@ -1,0 +1,20 @@
+<div class="controls">
+  <label>
+    State:
+    <select [(ngModel)]="state" required>
+      <option value="success">Success</option>
+      <option value="error">Error</option>
+      <option value="warning">Warning</option>
+      <option value="info">Info</option>
+    </select>
+  </label>
+
+  <label>
+    Description:
+    <input type="text" [(ngModel)]="description" placeholder="Enter a message..." required />
+  </label>
+
+  <button class="addNotificationBtn" type="submit" (click)="addNotification()">
+    Add Notification
+  </button>
+</div>

@@ -1,0 +1,27 @@
+<div class="notificationCenter">
+  <app-notification-form (add)="addNotification($event)" />
+
+  @for (notification of notifications; track $index) {
+  <div [ngSwitch]="notification.state" class="notification-container">
+    <div *ngSwitchCase="'success'" class="notification success">
+      <strong>Success</strong>
+      <span>{{ notification.description }}</span>
+    </div>
+
+    <div *ngSwitchCase="'error'" class="notification error">
+      <strong>Error</strong>
+      <span>{{ notification.description }}</span>
+    </div>
+
+    <div *ngSwitchCase="'warning'" class="notification warning">
+      <strong>Warning</strong>
+      <span>{{ notification.description }}</span>
+    </div>
+
+    <div *ngSwitchCase="'info'" class="notification info">
+      <strong>Info</strong>
+      <span>{{ notification.description }}</span>
+    </div>
+  </div>
+  }
+</div>

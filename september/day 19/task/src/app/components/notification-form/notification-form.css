@@ -1,0 +1,23 @@
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+select,
+input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.addNotificationBtn {
+  background-color: teal;
+  cursor: pointer;
+  color: white;
+  border: none;
+  height: 30px;
+  border-radius: 3px;
+}

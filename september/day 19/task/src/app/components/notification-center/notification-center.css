@@ -1,0 +1,48 @@
+.notificationCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.notification-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin-bottom: 10px;
+  min-width: 300px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.notification strong {
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.notification.success {
+  background-color: #59b457;
+}
+
+.notification.error {
+  background-color: #d05844;
+}
+
+.notification.warning {
+  background-color: #f2bc53;
+}
+
+.notification.info {
+  background-color: #4990df;
+}
