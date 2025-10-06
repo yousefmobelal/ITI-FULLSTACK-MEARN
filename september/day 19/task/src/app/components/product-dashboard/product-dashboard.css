@@ -52,6 +52,14 @@ input {
   height: max-content;
 }
 
+.productImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
 .productItem.p {
   line-height: 0;
   margin-bottom: 0px;
@@ -77,26 +85,7 @@ input {
   color: white;
 }
 
-.favoriteProductItem {
-  display: flex;
-  justify-content: space-between;
-  width: 20%;
-}
-
-.favoriteIcon {
+.error {
   color: red;
-  margin-right: 30px;
-  font-size: 40px;
-}
-
-.favoriteProducts {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.noFavoriteProducts {
-  margin-inline: auto;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 14px;
 }

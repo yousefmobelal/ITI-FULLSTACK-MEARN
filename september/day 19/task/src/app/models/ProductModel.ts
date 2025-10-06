@@ -2,7 +2,7 @@ export class ProductModel {
   constructor(
     public id: string,
     public name: string,
-    public price: number,
+    public price: string,
     public category: string
   ) {}
 }

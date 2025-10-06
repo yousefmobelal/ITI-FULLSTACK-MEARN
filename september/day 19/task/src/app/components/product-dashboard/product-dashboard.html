@@ -2,36 +2,47 @@
   <h1>Product Dashboard</h1>
 
   <div class="addProductContainer">
-    <div class="addProductForm">
+    <form
+      [formGroup]="productForm"
+      (ngSubmit)="isUpdating ? updateProduct() : addProduct()"
+      class="addProductForm"
+    >
       <h2>Add Product</h2>
-      <label for="productName">Name:</label>
-      <input type="text" name="productName" id="productName" [(ngModel)]="productName" required />
-      <label for="productPrice">Price:</label>
-      <input
-        type="number"
-        name="productPrice"
-        id="productPrice"
-        [(ngModel)]="productPrice"
-        required
-      />
-      <label for="productCategory">Category:</label>
-      <input
-        type="text"
-        name="productCategory"
-        id="productCategory"
-        [(ngModel)]="productCategory"
-        required
-      />
 
-      <button
-        id="addProductBtn"
-        type="submit"
-        (click)="isUpdating ? updateProduct() : addProduct()"
-        [class.update]="isUpdating"
+      <label for="productName">Name:</label>
+      <input type="text" name="productName" id="productName" formControlName="name" />
+      <div
+        *ngIf="productForm.get('name')?.touched && productForm.get('name')?.invalid"
+        class="error"
       >
+        <small *ngIf="isRequired('name')">Name is required.</small>
+        <small *ngIf="isExceedingMaxLength('name')">Must be at most 30 characters.</small>
+      </div>
+
+      <label for="productPrice">Price:</label>
+      <input type="number" name="productPrice" id="productPrice" formControlName="price" />
+      <div
+        *ngIf="productForm.get('price')?.touched && productForm.get('price')?.invalid"
+        class="error"
+      >
+        <small *ngIf="isRequired('price')">Price is required.</small>
+        <small *ngIf="isBelowMin('price')">Price must be greater than zero.</small>
+      </div>
+
+      <label for="productCategory">Category:</label>
+      <input type="text" name="productCategory" id="productCategory" formControlName="category" />
+      <div
+        *ngIf="productForm.get('category')?.touched && productForm.get('category')?.invalid"
+        class="error"
+      >
+        <small *ngIf="isRequired('category')">Category is required.</small>
+        <small *ngIf="isExceedingMaxLength('category')">Must be at most 20 characters.</small>
+      </div>
+
+      <button id="addProductBtn" type="submit" [class.update]="isUpdating">
         {{ isUpdating ? 'Update' : 'Add' }}
       </button>
-    </div>
+    </form>
 
     <div class="productsList">
       @for (product of products; track $index) {
@@ -63,20 +74,5 @@
     </div>
   </div>
 
-  <h2>Favorite Products</h2>
-  <div class="favoriteProducts">
-    @if (favoriteProducts.length === 0) {
-    <p class="noFavoriteProducts">No favorite products available.</p>
-    } @else { @for (product of favoriteProducts; track $index) {
-
-    <div class="productItem favoriteProductItem">
-      <div>
-        <h3>{{ product.name }}</h3>
-        <p>Price: {{ product.price }}$</p>
-        <p>Category: {{ product.category }}</p>
-      </div>
-      <h1 class="favoriteIcon">❤</h1>
-    </div>
-    } }
-  </div>
+  <app-favorite-products [favoriteProducts]="favoriteProducts" />
 </div>

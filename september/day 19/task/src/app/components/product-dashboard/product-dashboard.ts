@@ -1,17 +1,52 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ProductModel } from '../../models/ProductModel';
+import { CommonModule } from '@angular/common';
+import { FavoriteProducts } from '../favorite-products/favorite-products';
 
 @Component({
   selector: 'app-product-dashboard',
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, FavoriteProducts],
   templateUrl: './product-dashboard.html',
   styleUrl: './product-dashboard.css',
 })
-export class ProductDashboard {
-  productName: string = '';
-  productPrice: number | null = null;
-  productCategory: string = '';
+export class ProductDashboard implements OnInit {
+  productForm!: FormGroup;
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.productForm = this.fb.group({
+      name: [
+        '',
+        {
+          validators: [Validators.required, Validators.maxLength(30)],
+          updateOn: 'change',
+        },
+      ],
+      price: [
+        '',
+        {
+          validators: [Validators.required, Validators.min(0)],
+          updateOn: 'change',
+        },
+      ],
+      category: [
+        '',
+
+        {
+          validators: [Validators.required, Validators.maxLength(20)],
+          updateOn: 'change',
+        },
+      ],
+    });
+  }
 
   products: ProductModel[] = [];
   favoriteProductsIds: string[] = [];
@@ -36,9 +71,11 @@ export class ProductDashboard {
       return;
     }
     this.editingProductId = product.id;
-    this.productName = product.name;
-    this.productPrice = product.price;
-    this.productCategory = product.category;
+    this.productForm.setValue({
+      name: product.name,
+      price: product.price,
+      category: product.category,
+    });
   }
 
   isFavorite(productId: string): boolean {
@@ -76,9 +113,9 @@ export class ProductDashboard {
       return;
     }
 
-    product.name = this.productName;
-    product.price = this.productPrice!;
-    product.category = this.productCategory;
+    product.name = this.productForm.value.name!;
+    product.price = this.productForm.value.price!;
+    product.category = this.productForm.value.category!;
 
     this.editingProductId = null;
     this.resetInputs();
@@ -92,35 +129,34 @@ export class ProductDashboard {
 
     const newProduct = new ProductModel(
       Date.now().toLocaleString(),
-      this.productName,
-      this.productPrice!,
-      this.productCategory
+      this.productForm.value.name!,
+      this.productForm.value.price!,
+      this.productForm.value.category!
     );
     this.products.push(newProduct);
     this.resetInputs();
   }
 
   resetInputs(): void {
-    this.productName = '';
-    this.productPrice = null;
-    this.productCategory = '';
+    this.productForm.reset();
   }
 
   areInputsValid(): boolean {
-    if (!this.productName) {
-      alert('Product name is required.');
-      return false;
-    }
+    console.log(this.productForm.get('name')?.errors);
+    return this.productForm.valid;
+  }
 
-    if (!this.productPrice) {
-      alert('Product price must be greater than zero.');
-      return false;
-    }
-    if (!this.productCategory) {
-      alert('Product category is required.');
-      return false;
-    }
+  isRequired(controlName: string): boolean {
+    const control = this.productForm.get(controlName);
+    return control?.hasError('required') ?? false;
+  }
 
-    return true;
+  isExceedingMaxLength(controlName: string): boolean {
+    const control = this.productForm.get(controlName);
+    return control?.hasError('maxlength') ?? false;
+  }
+  isBelowMin(controlName: string): boolean {
+    const control = this.productForm.get(controlName);
+    return control?.hasError('min') ?? false;
   }
 }
