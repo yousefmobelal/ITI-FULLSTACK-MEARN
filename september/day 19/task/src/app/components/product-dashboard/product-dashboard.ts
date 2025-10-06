@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ProductModel } from '../../models/ProductModel';
 
 @Component({
   selector: 'app-product-dashboard',
@@ -12,11 +13,11 @@ export class ProductDashboard {
   productPrice: number | null = null;
   productCategory: string = '';
 
-  products: Product[] = [];
+  products: ProductModel[] = [];
   favoriteProductsIds: string[] = [];
   editingProductId: string | null = null;
 
-  get favoriteProducts(): Product[] {
+  get favoriteProducts(): ProductModel[] {
     return this.products.filter((p) => this.favoriteProductsIds.includes(p.id));
   }
 
@@ -28,7 +29,7 @@ export class ProductDashboard {
     return this.editingProductId === productId;
   }
 
-  chooseProductTobeUpdated(product: Product) {
+  chooseProductTobeUpdated(product: ProductModel) {
     if (this.editingProductId == product.id) {
       this.editingProductId = null;
       this.resetInputs();
@@ -89,7 +90,7 @@ export class ProductDashboard {
       return;
     }
 
-    const newProduct = new Product(
+    const newProduct = new ProductModel(
       Date.now().toLocaleString(),
       this.productName,
       this.productPrice!,
@@ -122,13 +123,4 @@ export class ProductDashboard {
 
     return true;
   }
-}
-
-class Product {
-  constructor(
-    public id: string,
-    public name: string,
-    public price: number,
-    public category: string
-  ) {}
 }
