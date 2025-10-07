@@ -1,0 +1,34 @@
+<main class="container">
+  <h1>Classes</h1>
+
+  <div class="row">
+    <div class="col-3">
+      <div class="w-100 d-flex flex-column">
+        <button
+          class="btn btn-primary btn-lg mb-3 w-75"
+          routerLinkActive="bg-danger"
+          routerLink="javascript"
+        >
+          JavaScript
+        </button>
+        <button
+          class="btn btn-primary btn-lg mb-3 w-75"
+          routerLinkActive="bg-danger"
+          routerLink="react"
+        >
+          React
+        </button>
+        <button
+          class="btn btn-primary btn-lg mb-3 w-75"
+          routerLinkActive="bg-danger"
+          routerLink="nodejs"
+        >
+          NodeJs
+        </button>
+      </div>
+    </div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>

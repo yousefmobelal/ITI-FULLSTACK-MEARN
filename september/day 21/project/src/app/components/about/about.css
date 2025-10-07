@@ -1,0 +1,12 @@
+h1 {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 120px;
+}

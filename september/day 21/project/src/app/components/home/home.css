@@ -1,0 +1,72 @@
+main {
+  font-family: Outfit, sans-serif;
+  margin: 100px 80px 60px 80px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-family: 'Opens Sans', sans-serif;
+  margin-top: 20px;
+  color: #636363;
+}
+
+button {
+  border: none;
+  border-radius: 50px;
+  font-family: 'Opens Sans', sans-serif;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 40px;
+}
+.startTrialButton {
+  margin-right: 30px;
+  background-color: #2489d3;
+  color: white;
+}
+
+.howItWorksButton {
+  background-color: white;
+  color: #2489d3;
+  border: 2px solid #2489d3;
+}
+
+.features {
+  display: flex;
+  gap: 90px;
+  margin-top: 70px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-title {
+  font-size: 40px;
+  line-height: 0;
+  font-weight: bold;
+}
+
+.feature-desc {
+  font-size: 20px;
+  font-weight: bold;
+  width: 125px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.feature-title1 {
+  color: #f0c932;
+}
+.feature-title2 {
+  color: #2489d3;
+}
+.feature-title3 {
+  color: #f76b6a;
+}
