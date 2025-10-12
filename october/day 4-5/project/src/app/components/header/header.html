@@ -45,11 +45,19 @@
         </li>
       </ul>
 
+      @if(!authService.isLoggedIn){
       <ul class="navbar-nav ms-lg-auto mt-2 mt-lg-0 me-3">
         <li class="nav-item">
           <a class="btn btn-primary" routerLink="login">Login</a>
         </li>
       </ul>
+      } @else {
+      <ul class="navbar-nav ms-lg-auto mt-2 mt-lg-0 me-3">
+        <li class="nav-item">
+          <a class="btn btn-danger" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+      }
     </div>
   </div>
 </nav>

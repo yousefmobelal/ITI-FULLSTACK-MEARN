@@ -29,9 +29,8 @@
     }
   </div>
 
-  @if(isInvalidCredentails && !isEmailEmpty() && !isPasswordEmpty()){
+  @if(!isValidCredentails && !isEmailEmpty() && !isPasswordEmpty()){
   <p class="text-danger">Your Email or Password is wrong</p>
-
   }
   <button type="submit" class="w-100 btn btn-primary mt-3">Submit</button>
 </form>

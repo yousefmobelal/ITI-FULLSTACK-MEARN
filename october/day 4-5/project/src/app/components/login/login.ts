@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-login',
@@ -16,23 +17,19 @@ import { Router } from '@angular/router';
   styleUrl: './login.css',
 })
 export class Login {
-  isInvalidCredentails: boolean = false;
+  isValidCredentails: boolean = true;
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
   });
   router = inject(Router);
+  authService = inject(AuthService);
 
   login() {
-    const validEmail = 'test@gmail.com';
-    const validPassword = '12345';
-    console.log(`This is email: ${this.email}, password: ${this.password}`);
-    if (this.email === validEmail && this.password === validPassword) {
-      localStorage.setItem('authenticated', 'true');
-      this.isInvalidCredentails = false;
+    if (!this.email || !this.password) return;
+    this.isValidCredentails = this.authService.login(this.email, this.password);
+    if (this.isValidCredentails) {
       this.router.navigate(['/']);
-    } else {
-      this.isInvalidCredentails = true;
     }
   }
 
