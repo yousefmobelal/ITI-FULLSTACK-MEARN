@@ -1,0 +1,10 @@
+.movie {
+  overflow: hidden;
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out;
+}
+
+.movie:hover {
+  transform: scale(1.03);
+}
