@@ -1,35 +1,27 @@
 const HawaiianPizzaBuilder = require("./pizzasBuilders/HawaiianPizzaBuilder");
 const MeatLoversPizzaBuilder = require("./pizzasBuilders/MeatLoversPizzaBuilder");
 
-class PizzaDirector {
-  constructor(builder) {
-    this.builder = builder;
-  }
-
-  makeSmallHawaiian() {
-    this.builder.reset();
-    this.builder.setSize("small");
-    this.builder.addCheese();
-    this.builder.addBacon();
-    return this.builder.getResult();
-  }
-
-  makeLargeMeatLovers() {
-    this.builder.reset();
-    this.builder.setSize("large");
-    this.builder.addCheese();
-    this.builder.addPepperoni();
-    this.builder.addBacon();
-    return this.builder.getResult();
-  }
+function makeSmallHawaiian() {
+  const pizza = new HawaiianPizzaBuilder();
+  pizza.reset();
+  pizza.setSize("small");
+  pizza.addCheese();
+  pizza.addBacon();
+  return pizza.getResult();
 }
 
-const hawaiianBuilder = new HawaiianPizzaBuilder();
-const director1 = new PizzaDirector(hawaiianBuilder);
-const pizza1 = director1.makeSmallHawaiian();
+function makeLargeMeatLovers() {
+  const pizza = new MeatLoversPizzaBuilder();
+  pizza.reset();
+  pizza.setSize("large");
+  pizza.addCheese();
+  pizza.addPepperoni();
+  pizza.addBacon();
+  return pizza.getResult();
+}
+
+const pizza1 = makeSmallHawaiian();
 console.log(pizza1.toString());
 
-const meatBuilder = new MeatLoversPizzaBuilder();
-const director2 = new PizzaDirector(meatBuilder);
-const pizza2 = director2.makeLargeMeatLovers();
+const pizza2 = makeLargeMeatLovers();
 console.log(pizza2.toString());
