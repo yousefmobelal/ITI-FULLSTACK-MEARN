@@ -1,9 +1,9 @@
-import Home from "../Components/Home.jsx";
+import ProductManagementPage from "../Pages/ProductManagementPage";
 
 function App() {
   return (
     <>
-      <Home />
+      <ProductManagementPage />
     </>
   );
 }
