@@ -1,6 +1,6 @@
-const DoneState = require("../../task/state/states/DoneState");
-const InProgressState = require("../../task/state/states/InProgressState");
-const ReadyForReviewState = require("../../task/state/states/ReadyForReviewState");
+const DoneState = require("./states/DoneState");
+const InProgressState = require("./states/InProgressState");
+const ReadyForReviewState = require("./states/ReadyForReviewState");
 
 const STATE_IN_PROGRESS = "IN_PROGRESS";
 const STATE_READY_FOR_REVIEW = "READY_FOR_REVIEW";

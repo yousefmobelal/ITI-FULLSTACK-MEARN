@@ -17,19 +17,19 @@ class StoreFacade {
     console.log("\n=== Order Process Started ===");
 
     if (!this.inventory.checkStock(productId)) {
-      console.log("❌ Product is out of stock.");
+      console.log("Product is out of stock.");
       return;
     }
 
     if (!this.payment.makePayment(amount)) {
-      console.log("❌ Payment failed.");
+      console.log("Payment failed.");
       return;
     }
 
     const shipmentId = this.shipping.createShipment(productId);
     this.notification.sendConfirmation(customerEmail, shipmentId);
 
-    console.log("✅ Order completed successfully!");
+    console.log("Order completed successfully!");
   }
 }
 
