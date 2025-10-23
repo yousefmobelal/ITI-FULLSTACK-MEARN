@@ -13,31 +13,15 @@ export default function ProductCard({ product }) {
         cursor: "pointer",
       }}
     >
-      {product.image ? (
-        <CardMedia
-          component="img"
-          image={product.image}
-          alt={product.name}
-          sx={{
-            height: 180,
-            objectFit: "cover",
-          }}
-        />
-      ) : (
-        <Box
-          sx={{
-            height: 180,
-            bgcolor: "#f0f0f0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "text.secondary",
-            fontSize: 14,
-          }}
-        >
-          No Image
-        </Box>
-      )}
+      <CardMedia
+        component="img"
+        image={product.image}
+        alt={product.name}
+        sx={{
+          height: 180,
+          objectFit: "cover",
+        }}
+      />
 
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant="h6" fontWeight="bold">

@@ -27,7 +27,7 @@ export default function AddProductForm({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!form.name || !form.price)
+    if (!form.name || !form.image || !form.description || !form.price)
       return alert("Please fill in required fields");
     onAdd({ ...form, id: Date.now() });
     setForm({
@@ -64,6 +64,7 @@ export default function AddProductForm({ onAdd }) {
         name="image"
         value={form.image}
         onChange={handleChange}
+        required
       />
       <TextField
         label="Description"
@@ -72,6 +73,7 @@ export default function AddProductForm({ onAdd }) {
         onChange={handleChange}
         multiline
         rows={3}
+        required
       />
       <TextField
         label="Price ($)"
@@ -87,6 +89,7 @@ export default function AddProductForm({ onAdd }) {
         type="number"
         value={form.stock}
         onChange={handleChange}
+        required
       />
 
       <FormControlLabel

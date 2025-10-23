@@ -18,7 +18,7 @@ export default function ProductManagementPage() {
 
   const handleAddProduct = (newProduct) => {
     setProducts((prev) => [...prev, newProduct]);
-    setView("products"); //
+    setView("products");
   };
 
   return (
