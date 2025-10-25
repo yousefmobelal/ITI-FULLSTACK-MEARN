@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GraphQL Client with Subscriptions</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 2em auto; }
+    button { padding: 8px 12px; margin-right: 10px; }
+    pre { background: #f5f5f5; padding: 10px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>GraphQL Client with Subscriptions</h1>
+
+  <h2>Query</h2>
+  <button id="queryBtn">Run Hello Query</button>
+  <pre id="queryResult"></pre>
+
+  <h2>Subscription</h2>
+  <button id="subscribeBtn">Start Countdown</button>
+  <button id="unsubscribeBtn" disabled>Stop Countdown</button>
+  <pre id="subscriptionResult"></pre>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.skypack.dev/graphql-ws';
+
+    const HTTP_URL = 'http://localhost:4200/graphql';
+    const WS_URL = 'ws://localhost:4200/graphql';
+
+    const queryBtn = document.getElementById('queryBtn');
+    const queryResult = document.getElementById('queryResult');
+    const subscribeBtn = document.getElementById('subscribeBtn');
+    const unsubscribeBtn = document.getElementById('unsubscribeBtn');
+    const subscriptionResult = document.getElementById('subscriptionResult');
+
+    // --- Simple Query ---
+    queryBtn.addEventListener('click', async () => {
+      const res = await fetch(HTTP_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: '{ hello }' }),
+      });
+      const data = await res.json();
+      queryResult.textContent = JSON.stringify(data, null, 2);
+    });
+
+    // --- Subscription ---
+    let unsubscribe;
+
+    subscribeBtn.addEventListener('click', () => {
+      subscriptionResult.textContent = 'Starting countdown...\n';
+      const client = createClient({ url: WS_URL });
+
+      unsubscribe = client.subscribe(
+        {
+          query: 'subscription { countdown(from: 5) { countdown } }',
+        },
+        {
+          next: (data) => {
+            subscriptionResult.textContent +=
+              'Received: ' + JSON.stringify(data.data) + '\n';
+          },
+          error: (err) => {
+            subscriptionResult.textContent += 'Error: ' + err + '\n';
+          },
+          complete: () => {
+            subscriptionResult.textContent += 'Subscription complete\n';
+            subscribeBtn.disabled = false;
+            unsubscribeBtn.disabled = true;
+          },
+        }
+      );
+
+      subscribeBtn.disabled = true;
+      unsubscribeBtn.disabled = false;
+    });
+
+    unsubscribeBtn.addEventListener('click', () => {
+      if (unsubscribe) unsubscribe();
+      subscriptionResult.textContent += 'Stopped subscription\n';
+      subscribeBtn.disabled = false;
+      unsubscribeBtn.disabled = true;
+    });
+  </script>
+</body>
+</html>
